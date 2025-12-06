@@ -27,11 +27,16 @@ jobs:
     - name: Build Application
       run: python build_exe.py
       
+    - name: Zip Application
+      run: |
+        cd dist
+        zip -r AI_Assistant.zip AI_Assistant.app
+      
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: AI_Assistant_macOS
-        path: dist/AI_Assistant.app
+        path: dist/AI_Assistant.zip
         
   build-windows:
     runs-on: windows-latest
