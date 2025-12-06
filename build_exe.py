@@ -11,6 +11,10 @@ def build():
     # Auto-install dependencies first
     install_dependencies()
 
+    # Clean previous spec file to ensure fresh config
+    if os.path.exists("AI_Assistant.spec"):
+        os.remove("AI_Assistant.spec")
+
     # Define the main script
     main_script = "gui_launcher.py"
     
