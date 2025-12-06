@@ -1,0 +1,59 @@
+name: Build Application
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+        
+    - name: Build Application
+      run: python build_exe.py
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AI_Assistant_macOS
+        path: dist/AI_Assistant.app
+        
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+        
+    - name: Build Application
+      run: python build_exe.py
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AI_Assistant_Windows
+        path: dist/AI_Assistant.exe

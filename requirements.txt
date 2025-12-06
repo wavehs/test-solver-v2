@@ -1,0 +1,8 @@
+google-generativeai
+mss
+Pillow
+pynput
+python-dotenv
+pystray
+customtkinter
+pyobjc-framework-Cocoa; sys_platform == 'darwin'

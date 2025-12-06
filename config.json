@@ -1,0 +1,13 @@
+{
+    "trigger_hotkey": "<ctrl>+<shift>",
+    "reveal_hotkey": "<ctrl>+<alt>",
+    "overlay_position": "Top-Right",
+    "overlay_offset_x": 50,
+    "overlay_offset_y": 20,
+    "overlay_opacity": 0.19999999999999996,
+    "overlay_size": 30,
+    "overlay_font_size": 12,
+    "overlay_text_color": "#00FF00",
+    "gemini_api_key": "AIzaSyAaqwsYQrEVrfUD5deB8hZxqBYwy3kcc3E",
+    "gemini_model": "gemini-2.5-pro"
+}
