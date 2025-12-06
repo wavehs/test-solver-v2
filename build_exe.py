@@ -28,10 +28,13 @@ def build():
     
     if sys.platform == "darwin":
         # macOS specific arguments
+        import platform
+        arch = platform.machine()
         args.extend([
+            "--target-arch", arch, # Explicitly build for the current architecture (arm64 or x86_64)
             "--argv-emulation", # Better compatibility for opening files/URLs
         ])
-        print(f"Building {app_name} for macOS...")
+        print(f"Building {app_name} for macOS ({arch})...")
     else:
         print(f"Building {app_name} for Windows...")
     
