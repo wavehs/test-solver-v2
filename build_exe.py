@@ -29,7 +29,6 @@ def build():
     if sys.platform == "darwin":
         # macOS specific arguments
         args.extend([
-            "--target-arch", "universal2", # Support both Intel and Apple Silicon
             "--argv-emulation", # Better compatibility for opening files/URLs
         ])
         print(f"Building {app_name} for macOS...")
